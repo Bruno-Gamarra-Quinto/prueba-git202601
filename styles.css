@@ -1,0 +1,40 @@
+/* Warm, polished styles for the login form */
+:root{
+  --bg1: #fff5eb;
+  --bg2: #ffe6cc;
+  --card: #fffaf5;
+  --accent: #ff7a42; /* warm orange */
+  --accent-2: #ffb66b; /* lighter */
+  --muted: #7a5a44;
+  --error: #e64545;
+  --success: #2ea44f;
+  --glass: rgba(255,255,255,0.6);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 100%);color:var(--muted)}
+.container{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{width:100%;max-width:460px;background:var(--card);padding:32px;border-radius:16px;box-shadow:0 12px 40px rgba(122,90,68,0.12);border:1px solid rgba(255,255,255,0.6)}
+.card h1{margin:0 0 18px 0;font-size:22px;color:#4a2b14}
+.field{margin-bottom:16px}
+.field label{display:block;margin-bottom:8px;font-size:13px;color:#704b35}
+.field input{width:100%;padding:12px 14px;border:1px solid rgba(122,90,68,0.12);border-radius:10px;font-size:15px;background:transparent}
+.field input:focus{outline:none;box-shadow:0 4px 18px rgba(255,122,66,0.12);border-color:var(--accent)}
+.pw-row{display:flex;gap:8px}
+.pw-row input{flex:1}
+.pw-toggle{background:transparent;border:1px solid rgba(122,90,68,0.08);padding:8px 10px;border-radius:8px;cursor:pointer}
+.pw-toggle:active{transform:translateY(1px)}
+.pw-strength{margin-top:8px;display:flex;align-items:center;gap:10px}
+.pw-strength .bar{height:8px;flex:1;background:linear-gradient(90deg,#f3f4f6,#f3f4f6);border-radius:8px;overflow:hidden}
+.pw-strength .bar > div{height:100%;width:0%;background:linear-gradient(90deg,#ffb66b,#ff7a42);transition:width .25s ease}
+.strengthText{font-size:13px;color:#8b5b3a;min-width:80px;text-align:right}
+.error{color:var(--error);font-size:13px;margin-top:8px;min-height:18px}
+.message{margin-top:14px;font-size:14px;min-height:20px}
+button[type="submit"]{width:100%;padding:12px 14px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;border:0;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 8px 20px rgba(255,122,66,0.12)}
+button:disabled{opacity:0.7;cursor:wait}
+
+@media (prefers-color-scheme:dark){
+  :root{--bg1:#2a1b14;--bg2:#3b271e;--card:#231712;color:#f8efe6}
+  body{background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 100%)}
+  .card{box-shadow:0 12px 40px rgba(0,0,0,0.6)}
+  .field input{background:rgba(255,255,255,0.02);border-color:rgba(255,255,255,0.04);color:var(--card)}
+}
