@@ -1,17 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-    <body>
-        <h1>Hola ESAN</h1>
-        <textarea>Ingrese su texto aqui...</textarea>
-        <button>Enviar</button>
-    </body>
-    <footer>
+<body>
+    <div class="container">
+        <form id="loginForm" class="card" novalidate>
+            <h1>Iniciar sesión</h1>
+            <div class="field">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                <div class="error" id="emailError"></div>
+            </div>
 
+            <div class="field">
+                <label for="password">Contraseña</label>
+                <div class="pw-row">
+                    <input type="password" id="password" name="password" placeholder="Mínimo 6 caracteres" required minlength="6" aria-describedby="passwordStrength">
+                    <button type="button" class="pw-toggle" id="pwToggle" aria-label="Mostrar contraseña">👁️</button>
+                </div>
+                <div class="pw-strength" id="passwordStrength" aria-hidden="false">
+                    <div class="bar" id="strengthBar"></div>
+                    <div class="strengthText" id="strengthText"></div>
+                </div>
+                <div class="error" id="passwordError"></div>
+            </div>
 
-    </footer> 
+            <button type="submit" id="submitBtn">Entrar</button>
+            <div id="formMessage" class="message" role="status" aria-live="polite"></div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
